@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "d6ab2cfe-c596-4fac-bf77-ca8b6faaf0f4",
+		"name": "Creative Task 01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27173354"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test@gmail.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{creative_task_01}}/auth/signup",
+							"host": [
+								"{{creative_task_01}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"test@gmail.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{creative_task_01}}/auth/login",
+							"host": [
+								"{{creative_task_01}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWQ5MDFlNjVhNzc4M2VhMWQ2MzZmNiIsImlhdCI6MTcxNzQwNzc5MCwiZXhwIjoxNzE3NDExMzkwfQ.QMdEWTHI0Ja6V-h8RGWKEJZoupFocRsg7cJyCk_VjZc"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/rrena/Downloads/IMG_20230830_120245_582.jpg",
+										"/C:/Users/rrena/Downloads/blog3.jpeg"
+									]
+								},
+								{
+									"key": "name",
+									"value": "Computer",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "40000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{creative_task_01}}/product/create",
+							"host": [
+								"{{creative_task_01}}"
+							],
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWQ3ZGRhNGRmODM5ODRkOWM2MjY0MiIsImlhdCI6MTcxNzQwNTY0NCwiZXhwIjoxNzE3NDA5MjQ0fQ.pBSgFqnN3IOexLatSdAi_wn3KdDtjbNOv_ZaG75dA8E"
+							}
+						],
+						"url": {
+							"raw": "{{creative_task_01}}/product/get-all",
+							"host": [
+								"{{creative_task_01}}"
+							],
+							"path": [
+								"product",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWQ3ZGRhNGRmODM5ODRkOWM2MjY0MiIsImlhdCI6MTcxNzQwNTY0NCwiZXhwIjoxNzE3NDA5MjQ0fQ.pBSgFqnN3IOexLatSdAi_wn3KdDtjbNOv_ZaG75dA8E"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{creative_task_01}}/product/665d89efa4ebb9c6fbd7f029",
+							"host": [
+								"{{creative_task_01}}"
+							],
+							"path": [
+								"product",
+								"665d89efa4ebb9c6fbd7f029"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product ",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWQ3ZGRhNGRmODM5ODRkOWM2MjY0MiIsImlhdCI6MTcxNzQwNTY0NCwiZXhwIjoxNzE3NDA5MjQ0fQ.pBSgFqnN3IOexLatSdAi_wn3KdDtjbNOv_ZaG75dA8E"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/rrena/Downloads/blog4.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "updated_product",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1212",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{creative_task_01}}/product/update/665d886e5c9906ec304969e1",
+							"host": [
+								"{{creative_task_01}}"
+							],
+							"path": [
+								"product",
+								"update",
+								"665d886e5c9906ec304969e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product ",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWQ5MDFlNjVhNzc4M2VhMWQ2MzZmNiIsImlhdCI6MTcxNzQwODcxNSwiZXhwIjoxNzE3NDEyMzE1fQ.WVbS5U_jhBZDq0VifBaJxlVhu6rP8zV_D0WMTbL56C8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{creative_task_01}}/product/delete/665d93ce38078c50d66c15b8",
+							"host": [
+								"{{creative_task_01}}"
+							],
+							"path": [
+								"product",
+								"delete",
+								"665d93ce38078c50d66c15b8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
